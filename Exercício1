@@ -1,0 +1,50 @@
+// Crie um programa no qual o usuário deve inserir sua idade 
+// e o programa retornará a quantidade de dias que a pessoa viveu.
+// Desafio: considerar anos bissextos
+
+//importar biblioteca
+import java.util.Scanner;
+import java.time.LocalDate;
+
+public class Exercicio1{
+public static void main(String[] args){
+
+  //declarar variáveis
+  int idade,dias,anoAtual, anoNasc, bissexto = 0;
+
+  //iniciar biblioteca
+  Scanner sc=new Scanner(System.in);
+
+  //pedir idade para usuário e guardar na variável
+  System.out.println("Informe sua idade");
+  idade = sc.nextInt();
+
+  //quero que o usuário não necessite de informar o ano atual
+  anoAtual=LocalDate.now().getYear();
+
+  //atribuir cálculo para saber ano nascimento
+  anoNasc= anoAtual-idade;
+
+    // contar quantos anos bissextos existiram entre o ano de nascimento e o ano atual
+
+    bissexto = 0;
+    /* Condição de entrada é o Ano de nascimento, condição de parada Ano atual, passos somar 1
+    Se ano múltiplo de 4 e não de 100 ou múltiplo de 400, adicione 1 a variável bissexto */
+
+    for ( int i = anoNasc; i < anoAtual; i++) {
+      if (( i%4 == 0 && i%100 !=0) || ( i%400 == 0)) {
+      bissexto++;
+      }
+    }
+
+  //atribuir quantidade de dias
+  dias= (idade*365)+bissexto;
+
+  //mostrar resultado
+  System.out.println ("Você viveu aproximadamente "+ dias +" dias");
+
+  //fechar Scanner por boa prática
+  sc.close();
+  
+  }
+}
