@@ -1,0 +1,55 @@
+/*5) Faça um programa que mostre o menu de opções a seguir, receba a opção do usuário e os dados
+necessários para executar cada operação.
+Menus de opções:
+1. Somar dois números.
+2. Raiz quadrada de um número.
+Digite a opção desejada:*/
+
+import java.util.Scanner;
+
+public class Exercicio_5 {
+    public static void main(String[] args) {
+
+        double n1, n2, s, r;
+        int op;
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Menus de opções:\n" +
+                "1. Somar dois números.\n" +
+                "2. Raiz quadrada de um número.");
+        op = validador();
+
+        switch (op) {
+            case 1:
+                System.out.println("Digite primeiro número");
+                n1 = sc.nextDouble();
+                System.out.println("Digite segundo número");
+                n2 = sc.nextDouble();
+                s = n1 + n2;
+                System.out.println("O resultado é " + s);
+                break;
+            case 2:
+                System.out.println("Digite primeiro número");
+                n1 = sc.nextDouble();
+                r = Math.sqrt(n1);
+                System.out.println("O resultado é " + r);
+                break;
+            default:
+                System.out.println("Erro");
+        }
+    }
+        //Recursividade
+        public static int validador(){
+            Scanner sc= new Scanner(System.in);
+            System.out.println("Digite a opção");
+            int o=sc.nextInt();
+            if (o==1|| o==2){
+                return o;
+            }else {
+                System.out.println("Erro! Digte opção correta");
+                return validador();
+            }
+        }
+
+}
