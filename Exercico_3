@@ -1,0 +1,44 @@
+/* 3) Faça um programa que receba três números e mostre-os em ordem crescente. Suponha que o
+usuário digitará três números diferentes. */
+
+import java.util.Scanner;
+
+public class Exercico_3 {
+    public static void main(String[] args) {
+
+        double n1,n2,n3;
+
+        Scanner sc= new Scanner (System.in);
+        System.out.println("Digite primeiro número");
+        n1= sc.nextDouble();
+        System.out.println("Digite segundo número");
+        n2= sc.nextDouble();
+        System.out.println("Digite terceiro número");
+        n3= sc.nextDouble();
+
+        if (n1<n2 && n1<n3){
+            if(n2<n3){
+            System.out.printf("%.2f %.2f %.2f",n1,n2,n3);}
+            else{
+                System.out.printf("%.2f %.2f %.2f",n1,n3,n2);
+            }
+        }
+        if (n2<n1 && n2<n3){
+            if (n1<n3){
+            System.out.printf("%.2f %.2f %.2f",n2,n1,n3);}
+            else {
+                System.out.printf("%.2f %.2f %.2f",n2,n3,n1);
+            }
+        }
+        if (n3<n2 && n3<n1){
+            if (n1<n2){
+            System.out.printf("%.2f %.2f %.2f",n3,n2,n1);}
+            else{
+                System.out.printf("%.2f %.2f %.2f",n3,n2,n1);
+            }
+        }
+        if (n1==n2&&n1==n3&&n2==n3){
+            System.out.println("Todos são iguais");
+        }
+    }
+}
