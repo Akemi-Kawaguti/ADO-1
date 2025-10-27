@@ -1,0 +1,25 @@
+//2) Faça um programa que receba dois números e mostre o maior.
+
+import java.util.Scanner;
+public class Exercicio_2{
+  public static void main(String[] args){
+
+  double numero1, numero2;
+  Scanner sc=new Scanner(System.in);
+
+  System.out.println("Digite primeiro número");
+  numero1 = sc.nextDouble();
+
+  System.out.println("Digite segundo número");
+  numero2 = sc.nextDouble();
+
+  if (numero1 > numero2){
+  System.out.println("Primeriro número é maior");
+  } else if (numero2 > numero1){
+  System.out.println("Segundo número é maior");
+  } else {
+  System.out.println("Ambos tem mesmo valor");
+  }
+
+  }
+}
